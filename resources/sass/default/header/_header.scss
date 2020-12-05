@@ -36,15 +36,24 @@ headlogo {
     left: 105%;
   }
 
-  .searchcolumn {
-    .ui.icon.input > i.icon {
-      opacity: initial;
-    }
+    .searchcolumn {
+        max-width       : 420px;
+        width           : 100%;
+            
+        .ui.icon.input > i.icon {
+            opacity: initial;
+        }
 
-    @media screen and (max-width: $mobile-bp) {
-      display: none !important;
+        @media screen and (max-width: $mobile-bp) {
+            display: none !important;
+        }
+
+        input.prompt {
+            border-radius   : 6px;
+            min-height      : 40px;
+            width           : 100%;
+        }
     }
-  }
 
   .searchMobile {
     display: inline-block;
@@ -159,4 +168,64 @@ headlogo {
   font-size: 10px !important;
   background: #fff !important;
   border: 1px solid #2c3e50;
+}
+
+
+.header {
+    &__content {
+        display         : flex;
+        align-items     : center;
+        justify-content : space-between;
+        width           : 100%;
+        padding         : 15px 0;
+    }
+
+    &__right {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 420px;
+        width: 100%;
+    }
+
+    &__customer {
+        display     : flex;
+        align-items : center;
+    
+        svg {
+            margin-right: 4px;
+        }
+    }
+}
+
+.wishlist__link {
+    display     : flex;
+    align-items : center;
+
+    svg {
+        margin-right: 4px;
+    }
+}
+
+#cartButton {
+    .button  {
+        display: flex;
+        align-items: center;
+    }
+
+    #total_itens_card {
+        display             : flex;
+        align-items         : center;
+        justify-content     : center;
+        width               : 28px;
+        height              : 28px;
+        background-color    : #ab1431;
+        border-radius       : 50%;
+
+        font-size: 13px;
+        font-weight: bold;
+        line-height: normal;
+        color: #ffffff;
+    }
 }

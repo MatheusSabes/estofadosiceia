@@ -1,4 +1,6 @@
+const path = require('path');
 const { mix } = require('laravel-mix-jet');
+const store = path.dirname(__filename).split(path.sep).pop();
 
 /*
  |--------------------------------------------------------------------------
@@ -41,16 +43,16 @@ const { mix } = require('laravel-mix-jet');
  | });
  */
 /*
-mix.browserSync({
-    files: ['assets/css/!**!/!*.css', 'assets/js/!**!/!*.js', 'Views/!**!/!*.cshtml'],
-    ui: false,
-    server: false,
-    open: false,
-    ghostMode: false,
-    injectChanges: true,
-    proxy: 'localhost:5001'
-});
 */
+mix.browserSync({
+    open: true,
+    proxy: `https://${ store }.plataformaneo.com.br`,
+    https: true,
+    serveStatic: [{
+        route: '/assets',
+        dir: 'assets'
+    }]
+});
 
 mix.options({
     publicPath: './',
